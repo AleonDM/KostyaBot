@@ -4,11 +4,16 @@ const { Bot } = require('grammy')
 
 const KEY = '8434309822:AAEC4aVjp2GIgUNJvvQD1SVLG8MS0akLZJc'
 const bot = new Bot(KEY)
+let i = 0
+while (true) {
+    i++;
+    console.log(i)
+}
 
 bot.on('message:text', async (ctx) => {
     const messageText = ctx.message.text.toLowerCase().trim();
     try{
-        if (messageText.includes('костя') || messageText.includes('константин')) {
+        if (messageText.includes('кост') || messageText.includes('константин')) {
             let mass = [
                 'крутой пацан', 
                 'Константин — отличный парень!\nДаже круче чем Бред Пит\nПосле секса отвернется,\nИ тихонечко храпит.',
