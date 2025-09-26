@@ -37,9 +37,9 @@ bot.start()
 
 let i = 0
 while (true) {
-    setTimeout(() => {
-        i++;
-        console.log(i)
-    }, 30000)
-    
+    i++
+    console.log(i)
+    if (i > 40000) {
+        i = 0
+    }
 }
