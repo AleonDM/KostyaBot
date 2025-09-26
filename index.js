@@ -34,12 +34,3 @@ bot.on('message:text', async (ctx) => {
 });
 
 bot.start()
-
-let i = 0
-while (true) {
-    i++
-    console.log(i)
-    if (i > 40000) {
-        i = 0
-    }
-}
