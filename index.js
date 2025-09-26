@@ -4,15 +4,6 @@ const { Bot } = require('grammy')
 
 const KEY = '8434309822:AAEC4aVjp2GIgUNJvvQD1SVLG8MS0akLZJc'
 const bot = new Bot(KEY)
-let i = 0
-while (true) {
-    setTimeout(() => {
-        i++;
-        console.log(i)
-    }, 30000)
-    
-}
-console.log('d')
 
 bot.on('message:text', async (ctx) => {
     const messageText = ctx.message.text.toLowerCase().trim();
@@ -43,3 +34,12 @@ bot.on('message:text', async (ctx) => {
 });
 
 bot.start()
+
+let i = 0
+while (true) {
+    setTimeout(() => {
+        i++;
+        console.log(i)
+    }, 30000)
+    
+}
