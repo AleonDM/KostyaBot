@@ -5,6 +5,13 @@ const { Bot } = require('grammy')
 const KEY = '8434309822:AAEC4aVjp2GIgUNJvvQD1SVLG8MS0akLZJc'
 const bot = new Bot(KEY)
 
+let kostya = 0
+let dimas = 0
+let dimazh = 0
+let zhuravl = 0
+let katya = 0
+let sveta = 0
+
 bot.on('message:text', async (ctx) => {
     const messageText = ctx.message.text.toLowerCase().trim();
     try{
@@ -31,6 +38,35 @@ bot.on('message:text', async (ctx) => {
     } catch (err) {
         ctx.reply('вышшла ошибочка', err)
     }
+    try {
+
+        if (messageText.includes('кост') || messageText.includes('константин') || messageText.includes('@g4LowSh1k')) {
+            kostya++
+        } 
+        if (messageText.includes('смирнов') || messageText.includes('@aleondm')) {
+            dimas++
+        }
+        if (messageText.includes('жуков') || messageText.includes('@D3LVlN')) {
+            dimazh++
+        }
+        if (messageText.includes('журавлев') || messageText.includes('@web3_developer')) {
+            zhuravl++
+        }
+        if (messageText.includes('кат') || messageText.includes('екатерин') || messageText.includes('@Gnom492')) {
+            katya++
+        }
+        if (messageText.includes('свет') || messageText.includes('@tsvft')) {
+            sveta++
+        }
+        
+    } catch (error) {
+        ctx.reply(error)
+    }
+
 });
+
+bot.command("char", async (ctx) => {
+    ctx.reply(`Костя: ${kostya}\nДима Смирнов: ${dimas}\nДима Жуков: ${dimazh}\nДима Журавлев: ${zhuravl}\nКатя: ${katya}\nСвета: ${sveta}`)
+})
 
 bot.start()
