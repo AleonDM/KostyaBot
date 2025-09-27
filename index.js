@@ -1,8 +1,9 @@
 require('dotenv').config()
 const { Bot } = require('grammy')
+const process = require('process')
 
 
-const KEY = '8434309822:AAEC4aVjp2GIgUNJvvQD1SVLG8MS0akLZJc'
+const KEY = process.env.TOKEN
 const bot = new Bot(KEY)
 
 let kostya = 0
