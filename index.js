@@ -12,6 +12,19 @@ let zhuravl = 0
 let katya = 0
 let sveta = 0
 
+bot.command("start", (ctx) => {
+    ctx.reply('OK3');
+});
+
+bot.command("char", (ctx) => {
+    try {
+        ctx.reply(`Костя: ${kostya}\nДима Смирнов: ${dimas}\nДима Жуков: ${dimazh}\nДима Журавлев: ${zhuravl}\nКатя: ${katya}\nСвета: ${sveta}`)
+    } catch (error) {
+        ctx.reply(error)
+    }
+    
+})
+
 bot.on('message:text', async (ctx) => {
     const messageText = ctx.message.text.toLowerCase().trim();
     try{
@@ -64,18 +77,5 @@ bot.on('message:text', async (ctx) => {
     }
 
 });
-
-bot.command("start", (ctx) => {
-    ctx.reply('OK');
-});
-
-bot.command("char", (ctx) => {
-    try {
-        ctx.reply(`Костя: ${kostya}\nДима Смирнов: ${dimas}\nДима Жуков: ${dimazh}\nДима Журавлев: ${zhuravl}\nКатя: ${katya}\nСвета: ${sveta}`)
-    } catch (error) {
-        ctx.reply(error)
-    }
-    
-})
 
 bot.start()
