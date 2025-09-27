@@ -12,6 +12,7 @@ let dimazh = 0
 let zhuravl = 0
 let katya = 0
 let sveta = 0
+let david = 0
 
 bot.command("start", (ctx) => {
     ctx.reply('OK3');
@@ -19,7 +20,7 @@ bot.command("start", (ctx) => {
 
 bot.command("char", (ctx) => {
     try {
-        ctx.reply(`Костя: ${kostya}\nДима Смирнов: ${dimas}\nДима Жуков: ${dimazh}\nДима Журавлев: ${zhuravl}\nКатя: ${katya}\nСвета: ${sveta}`)
+        ctx.reply(`Костя: ${kostya}\nДавид ${david}\nДима Смирнов: ${dimas}\nДима Жуков: ${dimazh}\nДима Журавлев: ${zhuravl}\nКатя: ${katya}\nСвета: ${sveta}`)
     } catch (error) {
         ctx.reply(error)
     }
@@ -72,7 +73,9 @@ bot.on('message:text', async (ctx) => {
         if (messageText.includes('свет') || messageText.includes('@tsvft')) {
             sveta++
         }
-        
+        if (messageText.includes('давид') || messageText.includes('@deirozz')) {
+            david++
+        }
     } catch (error) {
         await ctx.reply(error)
     }
