@@ -36,7 +36,7 @@ bot.on('message:text', async (ctx) => {
             await ctx.reply(mass[rand]);
         }
     } catch (err) {
-        ctx.reply('вышшла ошибочка', err)
+        await ctx.reply('вышшла ошибочка', err)
     }
     try {
 
@@ -60,13 +60,22 @@ bot.on('message:text', async (ctx) => {
         }
         
     } catch (error) {
-        ctx.reply(error)
+        await ctx.reply(error)
     }
 
 });
 
-bot.command("char", async (ctx) => {
-    await ctx.reply(`Костя: ${kostya}\nДима Смирнов: ${dimas}\nДима Жуков: ${dimazh}\nДима Журавлев: ${zhuravl}\nКатя: ${katya}\nСвета: ${sveta}`)
+bot.command("start", (ctx) => {
+    ctx.reply('OK');
+});
+
+bot.command("char", (ctx) => {
+    try {
+        ctx.reply(`Костя: ${kostya}\nДима Смирнов: ${dimas}\nДима Жуков: ${dimazh}\nДима Журавлев: ${zhuravl}\nКатя: ${katya}\nСвета: ${sveta}`)
+    } catch (error) {
+        ctx.reply(error)
+    }
+    
 })
 
 bot.start()
