@@ -66,7 +66,7 @@ bot.on('message:text', async (ctx) => {
 });
 
 bot.command("char", async (ctx) => {
-    ctx.reply(`Костя: ${kostya}\nДима Смирнов: ${dimas}\nДима Жуков: ${dimazh}\nДима Журавлев: ${zhuravl}\nКатя: ${katya}\nСвета: ${sveta}`)
+    await ctx.reply(`Костя: ${kostya}\nДима Смирнов: ${dimas}\nДима Жуков: ${dimazh}\nДима Журавлев: ${zhuravl}\nКатя: ${katya}\nСвета: ${sveta}`)
 })
 
 bot.start()
