@@ -20,7 +20,7 @@ bot.command("start", (ctx) => {
 
 bot.command("char", (ctx) => {
     try {
-        ctx.reply(`Костя: ${kostya}\nДавид ${david}\nДима Смирнов: ${dimas}\nДима Жуков: ${dimazh}\nДима Журавлев: ${zhuravl}\nКатя: ${katya}\nСвета: ${sveta}`)
+        ctx.reply(`Костя: ${kostya}\nДавид: ${david}\nДима Смирнов: ${dimas}\nДима Жуков: ${dimazh}\nДима Журавлев: ${zhuravl}\nКатя: ${katya}\nСвета: ${sveta}`)
     } catch (error) {
         ctx.reply(error)
     }
@@ -45,9 +45,11 @@ bot.on('message:text', async (ctx) => {
                 "Когда Костя говорит 'решим', вселенная подстраивается",
                 "Костя - ходячее доказательство того, что харизма правит миром",
                 "У Косты планы на вечность, и он уже опаздывает",
-                "Костя не поднимает планку - он рождается над ней"
+                "Костя не поднимает планку - он рождается над ней",
+                "Константин, дорогой", 
+                "Константин, дорогой,\nЛицо твоё зеленое\nТы заканчивал бы пить\nБухло это палёное"
             ]
-            let rand = Math.floor(Math.random()*14)+1
+            let rand = Math.floor(Math.random()*15)+1
             await ctx.reply(mass[rand]);
         }
     } catch (err) {
